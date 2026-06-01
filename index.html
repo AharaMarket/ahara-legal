@@ -65,6 +65,7 @@
       color: #888;
       margin-bottom: 20px;
     }
+    a.inline { color: #6B3FA0; }
     footer {
       text-align: center;
       padding: 24px;
@@ -72,6 +73,19 @@
       color: #aaa;
       border-top: 1px solid #e5e5e5;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    th { background: #faf7ff; color: #6B3FA0; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -91,102 +105,401 @@
   <!-- ── Privacy Policy ─────────────────────────────────────────────── -->
   <section id="privacy">
     <h2>Privacy Policy</h2>
-    <p class="updated">Last updated: April 2026</p>
+    <p class="updated">Last updated: May 31, 2026</p>
 
-    <p>Ahara Hub ("we", "our", or "us") operates a restaurant inventory and team
-    management platform. This Privacy Policy explains how we collect, use, and
-    protect your information.</p>
+    <p>Ahara Hub (&ldquo;Ahara&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or
+    &ldquo;us&rdquo;) provides a restaurant inventory and team management
+    platform delivered as a mobile application and supporting web services
+    (collectively, the &ldquo;Service&rdquo;). This Privacy Policy explains
+    what information we collect, how we use it, who we share it with, and
+    the choices you have. By using the Service you acknowledge the practices
+    described below.</p>
 
-    <h3>Information We Collect</h3>
+    <h3>1. Who this policy applies to</h3>
+    <p>This policy applies to people who create an Ahara account, join a
+    restaurant team on Ahara, or otherwise interact with the Service.
+    The Service is intended for business use by people aged 18 and over.
+    We do not knowingly collect personal information from children under 13,
+    and the Service is not directed to children.</p>
+
+    <h3>2. Information we collect</h3>
+    <p>We collect only the information needed to operate the Service for
+    you and your restaurant team. Categories of data:</p>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Examples</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Account identifiers</td>
+          <td>Name, email address, profile photo (if you provide one),
+              authentication token</td>
+          <td>You, at sign-up</td>
+        </tr>
+        <tr>
+          <td>Contact details (optional)</td>
+          <td>Phone number — used to send operational SMS notifications
+              when you opt in</td>
+          <td>You, in account settings</td>
+        </tr>
+        <tr>
+          <td>Restaurant &amp; operational data</td>
+          <td>Restaurant name and address, catalog items, inventory levels,
+              distributors, invoices, shopping lists, orders, team chat
+              messages</td>
+          <td>You and your teammates, while using the app</td>
+        </tr>
+        <tr>
+          <td>Device &amp; technical data</td>
+          <td>Device type, OS version, app version, push-notification token,
+              crash diagnostics, basic usage logs</td>
+          <td>Automatically, when you use the app</td>
+        </tr>
+        <tr>
+          <td>Uploaded files</td>
+          <td>Photos of invoices and inventory items you choose to upload
+              for AI extraction or cataloging</td>
+          <td>You, when you upload</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>We do <strong>not</strong> collect precise device GPS location, health
+    data, financial-account credentials, biometric identifiers, contacts
+    other than what you explicitly select in the in-app invite picker, or
+    advertising identifiers.</p>
+
+    <h3>3. How we use information</h3>
     <ul>
-      <li>Name and email address (collected at account creation)</li>
-      <li>Phone number (optional, collected to send operational text notifications)</li>
-      <li>Restaurant and inventory data you enter into the app</li>
-      <li>Device tokens for push notifications</li>
+      <li>To operate the Service — sign you in, sync your restaurant&rsquo;s
+          data across teammates&rsquo; devices, and deliver the features you
+          interact with.</li>
+      <li>To send operational notifications (push and, where you have opted
+          in, SMS) about events that matter to your restaurant: stock
+          alerts, shopping-list approvals, order updates, team chat.</li>
+      <li>To extract structured line items from invoice photos you upload,
+          using AI processing.</li>
+      <li>To diagnose crashes, debug issues, and improve reliability and
+          performance.</li>
+      <li>To detect abuse and enforce our Terms of Service.</li>
+      <li>To comply with our legal obligations.</li>
+    </ul>
+    <p>We do <strong>not</strong> sell your personal information. We do not
+    use your data for cross-context behavioral advertising and we do not
+    show third-party ads in the Service.</p>
+
+    <h3>4. Service providers we share data with</h3>
+    <p>We share limited data with the providers below strictly to operate
+    the Service. Each provider is contractually required to safeguard the
+    data and to use it only for the purposes we direct.</p>
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>Purpose</th><th>Data shared</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Firebase (Authentication, Firestore, Cloud Functions,
+              Cloud Storage, Cloud Messaging)</td>
+          <td>Account auth, database, file storage, push delivery,
+              backend processing</td>
+          <td>Account identifiers, operational data, uploaded files,
+              device push tokens</td>
+        </tr>
+        <tr>
+          <td>Google Gemini API</td>
+          <td>AI extraction of line items from invoice photos and
+              generation of placeholder food imagery</td>
+          <td>Invoice / item photos you upload, item names. No account
+              identifiers are sent.</td>
+        </tr>
+        <tr>
+          <td>Google Places API</td>
+          <td>Address autocomplete when adding a restaurant or
+              distributor location</td>
+          <td>The address text you type into the picker</td>
+        </tr>
+        <tr>
+          <td>Apple Push Notification service</td>
+          <td>Delivery of iOS push notifications</td>
+          <td>Device push tokens; encrypted notification payload</td>
+        </tr>
+        <tr>
+          <td>Twilio</td>
+          <td>Delivery of SMS notifications (only to users who provided
+              a phone number and opted in)</td>
+          <td>Phone number, notification message text</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>We do not authorize these providers to use your information for
+    their own marketing or to combine it with data from other sources
+    for advertising purposes.</p>
+
+    <h3>5. Data retention</h3>
+    <p>We retain account information for as long as your account is
+    active. Operational data (catalog, inventory, invoices, lists, orders,
+    chat) is retained while the restaurant&rsquo;s team continues to use
+    Ahara. When you delete your account (see Section 7) we delete or
+    de-identify the personal information tied to that account within
+    30 days, subject to limited retention for legitimate business reasons
+    (e.g. tax records, fraud prevention, dispute resolution).</p>
+
+    <h3>6. Security</h3>
+    <p>We implement administrative, technical, and physical safeguards
+    designed to protect your information, including transport-layer
+    encryption (HTTPS / TLS) for data in transit, encryption at rest on
+    our cloud-storage providers, role-based access controls on our backend,
+    and Firebase Security Rules enforced at the database and storage
+    layer. No system is perfectly secure; if we become aware of a breach
+    affecting your data, we will notify you as required by applicable law.</p>
+
+    <h3>7. Your rights and choices</h3>
+    <ul>
+      <li><strong>Access &amp; correction</strong> &mdash; you can view and
+          edit your profile and your restaurant&rsquo;s data from inside
+          the app at any time.</li>
+      <li><strong>Account deletion</strong> &mdash; you can delete your
+          account directly from the app: Account &rarr; Delete account.
+          The action signs you out, removes your profile and authentication
+          record, and starts the deletion of personal data associated with
+          your account. You may also email
+          <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>
+          to request deletion.</li>
+      <li><strong>Push notifications</strong> &mdash; you can disable push
+          notifications at any time in your device&rsquo;s system settings.
+          The Service remains fully functional without push notifications.</li>
+      <li><strong>SMS notifications</strong> &mdash; you can opt out by
+          texting <strong>STOP</strong> to the sending number, or by
+          removing your phone number from your account profile. Text
+          <strong>HELP</strong> to the sending number for assistance.</li>
+      <li><strong>Photos, camera, contacts</strong> &mdash; the app only
+          accesses these when you initiate an action that requires them
+          (uploading an invoice photo, scanning a receipt, inviting a
+          teammate by phone). You can revoke any of these permissions at
+          any time in your device settings.</li>
+      <li><strong>Regional rights</strong> &mdash; depending on where you
+          live, you may have additional rights under laws such as the
+          GDPR (EU/UK) or the California Consumer Privacy Act (US/CA).
+          These can include the right to access, correct, delete, restrict,
+          or port your data, and to lodge a complaint with a regulator.
+          To exercise any of these rights, email
+          <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>.
+          We will not discriminate against you for exercising your rights.</li>
     </ul>
 
-    <h3>How We Use Your Information</h3>
-    <ul>
-      <li>To operate and provide the Ahara Hub service</li>
-      <li>To send operational text (SMS) and push notifications including stock
-          alerts, order updates, and team communications — only to users who
-          have provided their phone number and created an account</li>
-      <li>To improve the platform</li>
-    </ul>
+    <h3>8. International data transfers</h3>
+    <p>We operate primarily in the United States, and your information may
+    be processed and stored on servers located in the United States or
+    other countries where our service providers operate. Where required,
+    we rely on appropriate transfer mechanisms (such as Standard
+    Contractual Clauses) to protect personal data transferred from the
+    European Economic Area, the United Kingdom, or Switzerland.</p>
 
-    <h3>SMS Notifications &amp; Opt-In</h3>
-    <p>Users opt in to SMS notifications by creating an Ahara Hub account and
-    providing their phone number during the signup process. By submitting your
-    phone number you consent to receive automated operational text messages
-    from Ahara Hub. Message frequency varies based on your restaurant's
-    activity. Message and data rates may apply.</p>
-    <p>To opt out of SMS notifications, text <strong>STOP</strong> to the
-    sending number or remove your phone number from your account profile.
-    Text <strong>HELP</strong> for help.</p>
+    <h3>9. Children</h3>
+    <p>The Service is not intended for children under 13, and we do not
+    knowingly collect personal information from children under 13. If you
+    believe a child has provided us with personal information, please
+    contact <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>
+    and we will delete the information.</p>
 
-    <h3>Data Sharing</h3>
-    <p>We do not sell, rent, or share your personal information with third
-    parties for marketing purposes. We use Firebase (Google) for data storage
-    and Twilio for SMS delivery. These providers process data solely to
-    deliver the service.</p>
+    <h3>10. Changes to this policy</h3>
+    <p>We may update this Privacy Policy from time to time. We will post
+    the updated version at this URL and update the &ldquo;Last
+    updated&rdquo; date above. If we make material changes we will
+    additionally notify you through the app or by email.</p>
 
-    <h3>Data Retention</h3>
-    <p>We retain your data for as long as your account is active. You may
-    request deletion of your account and data by contacting us at
-    <a href="mailto:support@ahara.app">support@ahara.app</a>.</p>
-
-    <h3>Contact</h3>
-    <p>Questions? Email us at <a href="mailto:support@ahara.app">support@ahara.app</a>.</p>
+    <h3>11. Contact</h3>
+    <p>For questions or requests about this policy or our privacy
+    practices, email
+    <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>.</p>
   </section>
 
   <!-- ── Terms of Service ───────────────────────────────────────────── -->
   <section id="terms">
     <h2>Terms of Service</h2>
-    <p class="updated">Last updated: April 2026</p>
+    <p class="updated">Last updated: May 31, 2026</p>
 
-    <p>By using Ahara Hub you agree to these Terms of Service. Please read them
-    carefully.</p>
+    <p>These Terms of Service (&ldquo;Terms&rdquo;) are a binding agreement
+    between you and Ahara Hub (&ldquo;Ahara&rdquo;, &ldquo;we&rdquo;,
+    &ldquo;us&rdquo;) governing your use of the Ahara Hub mobile
+    application and related backend services (collectively, the
+    &ldquo;Service&rdquo;). By creating an account or otherwise using the
+    Service, you accept these Terms. If you do not agree, do not use the
+    Service.</p>
 
-    <h3>Use of the Service</h3>
-    <p>Ahara Hub is a business tool for restaurant owners and their staff to
-    manage inventory, shopping lists, and orders. You must be 18 or older and
-    authorized by your restaurant to use the platform.</p>
+    <h3>1. Who can use the Service</h3>
+    <p>You must be at least 18 years of age to use the Service. By using
+    the Service you represent that you meet this age requirement and that
+    the information you provide is accurate. If you use the Service on
+    behalf of a restaurant or other organization, you represent that you
+    are authorized to bind that organization to these Terms.</p>
 
-    <h3>SMS Messaging Terms</h3>
+    <h3>2. Accounts and team membership</h3>
+    <p>You are responsible for maintaining the confidentiality of your
+    login credentials and for all activity that occurs under your
+    account. Notify us promptly at
+    <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>
+    if you suspect unauthorized access. Each restaurant team is managed
+    by one or more designated owners and administrators, who may
+    invite, remove, or change the role of other team members.</p>
+
+    <h3>3. Acceptable use</h3>
+    <p>You agree not to:</p>
     <ul>
-      <li>Ahara Hub sends automated text messages for operational purposes
-          (stock alerts, order updates, team notifications)</li>
-      <li>Message frequency varies</li>
-      <li>Message and data rates may apply</li>
-      <li>Text <strong>STOP</strong> to opt out at any time</li>
-      <li>Text <strong>HELP</strong> for support information</li>
-      <li>For help, contact <a href="mailto:support@ahara.app">support@ahara.app</a></li>
+      <li>Use the Service for any unlawful purpose or in violation of any
+          applicable law or regulation.</li>
+      <li>Upload or transmit content that is unlawful, defamatory, harassing,
+          threatening, hateful, sexually explicit, infringing on others&rsquo;
+          intellectual-property rights, or otherwise objectionable.</li>
+      <li>Use the Service to send spam, phishing attempts, or any unsolicited
+          marketing.</li>
+      <li>Attempt to gain unauthorized access to data belonging to another
+          restaurant or user.</li>
+      <li>Interfere with, disrupt, or attempt to probe, scan, or test the
+          vulnerability of the Service or its supporting infrastructure.</li>
+      <li>Reverse engineer, decompile, or attempt to extract the source
+          code of the Service except to the extent permitted by law.</li>
+      <li>Use the Service in any manner that could damage, disable,
+          overburden, or impair it.</li>
+      <li>Use the Service to develop a competing product.</li>
+    </ul>
+    <p>We reserve the right to remove content and suspend or terminate
+    accounts that violate these rules. We may also cooperate with law
+    enforcement when required by law.</p>
+
+    <h3>4. User-generated content</h3>
+    <p>The Service includes a private team chat and other features that
+    let you and your teammates create content (item names, list items,
+    chat messages, photos, notes, etc.). You retain ownership of your
+    content. You grant Ahara a non-exclusive, worldwide, royalty-free
+    license to host, store, process, and display that content solely as
+    necessary to provide the Service to you and your team.</p>
+    <p>We do not pre-screen all user content, but we reserve the right
+    (without obligation) to filter, redact, or remove content that
+    violates these Terms or applicable law. We provide an in-app
+    mechanism to report objectionable content; reports are reviewed and
+    actioned within a reasonable time, typically within 24 hours of
+    receipt.</p>
+
+    <h3>5. SMS messaging terms</h3>
+    <ul>
+      <li>If you provide a phone number, you consent to receive automated
+          operational text messages from Ahara (stock alerts, list
+          approvals, order updates, team notifications).</li>
+      <li>Message frequency varies based on your restaurant&rsquo;s activity.</li>
+      <li>Message and data rates may apply.</li>
+      <li>Text <strong>STOP</strong> to opt out at any time.</li>
+      <li>Text <strong>HELP</strong> for support information.</li>
+      <li>For help, contact
+          <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>.</li>
     </ul>
 
-    <h3>Accounts</h3>
-    <p>You are responsible for maintaining the security of your account
-    credentials. Notify us immediately of any unauthorized access.</p>
+    <h3>6. Push notifications</h3>
+    <p>Ahara sends push notifications for operational events (low stock,
+    list approvals, order updates, chat). Push notifications are not
+    required to use the Service; you may disable them at any time in
+    your device settings. We do not send promotional push notifications.</p>
 
-    <h3>Acceptable Use</h3>
-    <p>You agree not to misuse the platform, attempt to access data of other
-    restaurants, or use the service for any unlawful purpose.</p>
+    <h3>7. AI features</h3>
+    <p>The Service uses AI to extract structured line items from invoice
+    photos you upload and to generate placeholder imagery for catalog
+    items. AI outputs may be inaccurate; you are responsible for
+    reviewing and correcting extracted data before relying on it.</p>
 
-    <h3>Limitation of Liability</h3>
-    <p>Ahara Hub is provided "as is". We are not liable for any indirect,
-    incidental, or consequential damages arising from use of the service.</p>
+    <h3>8. Fees and billing</h3>
+    <p>Some features of the Service may require a paid subscription.
+    Pricing, billing terms, and cancellation policies for any paid plan
+    will be presented to you before purchase. Free features remain
+    available without payment.</p>
 
-    <h3>Changes to Terms</h3>
-    <p>We may update these terms at any time. Continued use of the platform
-    after changes constitutes acceptance of the new terms.</p>
+    <h3>9. Intellectual property</h3>
+    <p>The Service, including its software, design, text, graphics,
+    logos, and trademarks, is owned by Ahara or its licensors and is
+    protected by intellectual-property laws. We grant you a limited,
+    non-exclusive, non-transferable, revocable license to use the
+    Service in accordance with these Terms. You may not copy, modify,
+    distribute, sell, or lease any part of the Service.</p>
 
-    <h3>Contact</h3>
-    <p>Questions? Email us at <a href="mailto:support@ahara.app">support@ahara.app</a>.</p>
+    <h3>10. Third-party services</h3>
+    <p>The Service relies on third-party providers (e.g. Google Firebase,
+    Google Gemini, Google Places, Apple Push, Twilio) to operate. Your
+    use of those underlying services may be subject to their own terms.
+    We are not responsible for the practices of any third party that
+    integrates with the Service outside the providers we directly use.</p>
+
+    <h3>11. Termination</h3>
+    <p>You may stop using the Service at any time and delete your
+    account from within the app (Account &rarr; Delete account). We may
+    suspend or terminate your access to the Service if you violate these
+    Terms or use the Service in a way that we reasonably believe could
+    create liability for Ahara, harm other users, or compromise the
+    integrity of the Service. We will provide reasonable notice of
+    termination where practicable.</p>
+
+    <h3>12. Disclaimers</h3>
+    <p>THE SERVICE IS PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS
+    AVAILABLE&rdquo; BASIS, WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. AHARA DOES
+    NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR
+    SECURE.</p>
+
+    <h3>13. Limitation of liability</h3>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, AHARA AND ITS AFFILIATES
+    SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+    CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE,
+    DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF (OR
+    INABILITY TO USE) THE SERVICE, EVEN IF AHARA HAS BEEN ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGES. AHARA&rsquo;S AGGREGATE LIABILITY FOR
+    ANY CLAIM ARISING OUT OF OR RELATED TO THE SERVICE WILL NOT EXCEED
+    THE GREATER OF (A) ONE HUNDRED U.S. DOLLARS ($100) OR (B) THE
+    AMOUNTS YOU PAID TO AHARA FOR THE SERVICE IN THE TWELVE (12) MONTHS
+    PRECEDING THE CLAIM.</p>
+
+    <h3>14. Indemnification</h3>
+    <p>You agree to defend, indemnify, and hold harmless Ahara and its
+    officers, directors, employees, and agents from any claim or demand
+    arising out of your use of the Service, your content, or your
+    violation of these Terms or applicable law.</p>
+
+    <h3>15. Governing law and disputes</h3>
+    <p>These Terms are governed by the laws of the State of California,
+    United States, without regard to its conflict-of-laws principles.
+    Any dispute arising out of or relating to these Terms or the
+    Service will be resolved in the state or federal courts located in
+    San Francisco County, California, and you consent to personal
+    jurisdiction there. Nothing in this section prevents either party
+    from seeking injunctive relief in any court of competent
+    jurisdiction.</p>
+
+    <h3>16. Changes to these Terms</h3>
+    <p>We may update these Terms from time to time. We will post the
+    updated version at this URL and update the &ldquo;Last updated&rdquo;
+    date above. If we make material changes we will additionally notify
+    you through the app or by email. Continued use of the Service after
+    an update constitutes acceptance of the new Terms.</p>
+
+    <h3>17. Apple App Store additional terms</h3>
+    <p>If you use the iOS version of the Service, you acknowledge that
+    these Terms are between you and Ahara only, not with Apple Inc.
+    (&ldquo;Apple&rdquo;), and that Apple is not responsible for the
+    Service or its content. Apple has no obligation to provide any
+    maintenance or support for the Service. In the event of any failure
+    of the Service to conform to any applicable warranty, you may notify
+    Apple, and Apple will refund the purchase price (if any) for the
+    iOS application; to the maximum extent permitted by law, Apple has
+    no other warranty obligation whatsoever with respect to the
+    Service. Apple and its subsidiaries are third-party beneficiaries of
+    these Terms with the right to enforce them.</p>
+
+    <h3>18. Contact</h3>
+    <p>Questions about these Terms? Email
+    <a class="inline" href="mailto:support@ahara.app">support@ahara.app</a>.</p>
   </section>
 
 </main>
 
 <footer>
-  &copy; 2026 Ahara LLC. All rights reserved.
+  &copy; 2026 Ahara. All rights reserved.
 </footer>
 
 </body>
